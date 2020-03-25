@@ -3,6 +3,7 @@ import os
 from random import randint
 from math import sqrt
 
+
 class Game:
 	def __init__(self):
 		pygame.display.set_caption("Cube and Balls")
@@ -70,7 +71,7 @@ class Game:
 class Ball():
 	def __init__(self, x, y, game):
 		self.radius = 40
-		self.velocity = 3
+		self.velocity = 4
 		self.x = x
 		self.y = y
 
@@ -100,13 +101,13 @@ class Player(object):
 		# 4 - move down
 
 		if action == 1 and self.x >= 3:
-			self.x -= 3
+			self.x -= 5
 		elif action == 2 and self.y >= 3:
-			self.y -= 3
+			self.y -= 5
 		elif action == 3 and self.x <= game.game_width - 3 - self.width:
-			self.x += 3
+			self.x += 5
 		elif action == 4 and self.y <= game.game_height - 3 - self.height:
-			self.y += 3
+			self.y += 5
 
 		# ----------- MOVE BALLS, CHECK COLLISIONS ----
 
