@@ -27,3 +27,7 @@ Agent is already trained and working in 'demo' mode. To train him more switch DE
 To use new random Q-Table comment line 33 and uncomment line 32 at qlearining.py
 
 Also, you can play around SHOW_EVERY values to see more or less often agent gameplay.
+
+## By The Way
+As you can see code of a RNG of a ball spawner is little bit tricky. It is done so that the player doesn't have 100% loss situations
+and player can survive in any situation.
