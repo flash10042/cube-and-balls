@@ -82,8 +82,9 @@ for episode in range(EPISODES):
 
 	ep_rewards.append(score)
 
-	if not episode % 500:
-		np.save(f"qtables/{episode}-qtable.npy", q_table)
+	# ------------- IF YOU WANT TO SAVE Q-Table uncomment and create 'qtables' folder
+	#if not episode % 500:
+		#np.save(f"qtables/{episode}-qtable.npy", q_table)
 
 	if not episode % SHOW_EVERY:
 		average_reward = sum(ep_rewards[-SHOW_EVERY:])/len(ep_rewards[-SHOW_EVERY:])
