@@ -108,6 +108,11 @@ class Game:
 
 
 	def step(self, action):
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				pygame.quit()
+				exit()
+
 		# ------------- ACTIONS -----------------
 		# 0 - do nothing 
 		# 1 - move left
@@ -182,11 +187,6 @@ def run():
 	game = Game()
 
 	while not game.crash:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				pygame.quit()
-				exit()
-
 		game.display()
 
 		action = 0

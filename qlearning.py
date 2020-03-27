@@ -13,13 +13,13 @@ if DEMO_MODE:
 	SHOW_EVERY = 1
 	epsilon = 0
 else:
-	LEARNING_RATE = 0.2
-	SHOW_EVERY = 500
+	LEARNING_RATE = 0.1
+	SHOW_EVERY = 2500
 	epsilon = 0.3
-DISCOUNT = 1
-EPISODES = 3000
+DISCOUNT = 0.95
+EPISODES = 15000
 
-START_EPSILON_DECAYING = 0.95
+START_EPSILON_DECAYING = 1
 END_EPSILON_DECAYING = EPISODES // 2
 epsilon_decay_value = epsilon / (END_EPSILON_DECAYING - START_EPSILON_DECAYING)
 
@@ -55,7 +55,7 @@ for episode in range(EPISODES):
 		render = False
 	crash = False
 	while not crash:
-		if np.random.random() > epsilon:
+		if np.random.random() >= epsilon:
 			action = np.argmax(q_table[discrete_state])
 		else:
 			action = np.random.randint(0, 3)
@@ -83,8 +83,8 @@ for episode in range(EPISODES):
 	ep_rewards.append(score)
 
 	# ------------- IF YOU WANT TO SAVE Q-Table uncomment and create 'qtables' folder
-	#if not episode % 500:
-		#np.save(f"qtables/{episode}-qtable.npy", q_table)
+	#if not episode % 1000:
+	#	np.save(f"qtables/{episode}-qtable.npy", q_table)
 
 	if not episode % SHOW_EVERY:
 		average_reward = sum(ep_rewards[-SHOW_EVERY:])/len(ep_rewards[-SHOW_EVERY:])
