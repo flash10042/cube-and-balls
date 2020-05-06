@@ -11,7 +11,7 @@ solution is to create new Q-Table and train the agent on big epochs number and b
 
 
 ## Install
-This project requires Python, Pygame, Numpy and Matplotlib (for progress visualization after game session).
+This project requires Python 3.6+, Pygame, Numpy and Matplotlib (for progress visualization after game session).
 
 ``` bash
 git clone https://github.com/flash10042/cube-and-balls.git
