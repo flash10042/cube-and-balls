@@ -1,14 +1,17 @@
 # CUBE AND BALLS
-# Reinforcement Learning and (soon) Deep Reinforcement Learning
+# Reinforcement Learning. Q-Learning.
 
 ## Introduction
-The goal of this project is to create a game and develop an AI Bot able to play it from scratch. We use Q-Learning to train 
-agent for "easy" version of the game and soon I'll create a DQN that will be able to play in "hard" mode where balls start 
-fall faster with time.
+The task of this project is learn how to create an agent able to play created game using Q-Learning algorithm.
+The game (environment) sends to the agent his x position, (x,y) position of second bottom ball and x positions of third and
+forth ball. In my opinion this is the best choice of features to track to make Q-Table small enough and train system fast enough (~8 MB).
+At this point, agent does not good enough and crashes into balls on the left half of game field quite often. The best posible
+solution is to create new Q-Table and train the agent on big epochs number and big epsilon value. But just for presentation current Q-Table should be fine.
+
+
 
 ## Install
-This project requires Python 3.6, Pygame, Numpy and Matplotlib (optional, needs for progress visualization after game session).
-Soon this project will be using Keras with Tensorflow backend.
+This project requires Python, Pygame, Numpy and Matplotlib (for progress visualization after game session).
 
 ``` bash
 git clone https://github.com/flash10042/cube-and-balls.git
@@ -17,13 +20,13 @@ git clone https://github.com/flash10042/cube-and-balls.git
 ## Run
 To run just a game without an agent type at Terminal:
 ```
-python game.py
+python3 game.py
 ```
 To run game with agent playing it type next command:
 ```
-python qlearning.py
+python3 qlearning.py
 ```
-Agent is already trained and working in 'demo' mode. To train him more switch DEMO_MODE value to 0 at line 9 of qlearning.py.
+Agent is already trained and working in 'demo' mode. To train system switch DEMO_MODE value to 0 at line 9 of qlearning.py.
 To use new random Q-Table comment line 33 and uncomment line 32 at qlearining.py
 
 Also, you can play around SHOW_EVERY values to see more or less often agent gameplay.
