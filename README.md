@@ -5,6 +5,8 @@
 The task of this project is learn how to create an agent able to play created game using Q-Learning algorithm.
 The game (environment) sends to the agent his x position, (x,y) position of second bottom ball and x positions of third and
 forth ball. In my opinion this is the best choice of features to track to make Q-Table small enough and train system fast enough (~8 MB).
+
+
 ![](highlight.gif)
 
 
