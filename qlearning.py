@@ -15,9 +15,9 @@ if DEMO_MODE:
 else:
 	LEARNING_RATE = 0.1
 	SHOW_EVERY = 2500
-	epsilon = 0.25
+	epsilon = 0.99
 DISCOUNT = 0.95
-EPISODES = 25000
+EPISODES = 250000
 
 START_EPSILON_DECAYING = 1
 END_EPSILON_DECAYING = EPISODES // 2
@@ -83,7 +83,7 @@ for episode in range(EPISODES):
 	ep_rewards.append(score)
 
 	# ------------- IF YOU WANT TO SAVE Q-Table uncomment and create 'qtables' folder
-	#if not episode % 1000:
+	#if not episode % 2500:
 	#	np.save(f"qtables/{episode}-qtable.npy", q_table)
 
 	if not episode % SHOW_EVERY:

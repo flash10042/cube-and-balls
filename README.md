@@ -5,9 +5,7 @@
 The task of this project is learn how to create an agent able to play created game using Q-Learning algorithm.
 The game (environment) sends to the agent his x position, (x,y) position of second bottom ball and x positions of third and
 forth ball. In my opinion this is the best choice of features to track to make Q-Table small enough and train system fast enough (~8 MB).
-At this point, agent does not good enough and crashes into balls on the left half of game field quite often. The best posible
-solution is to create new Q-Table and train the agent on big epochs number and big epsilon value. But just for presentation current Q-Table should be fine.
-
+![](highlight.gif)
 
 
 ## Install
